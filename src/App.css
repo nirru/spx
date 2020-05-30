@@ -62,7 +62,7 @@
     padding: 10px 30px;
     text-decoration: none;
     font-size: 1rem;
-    margin: 10px 0px;
+    margin: 10px 0;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .next{
@@ -87,13 +87,12 @@
 }
 
 
-
-
-/*.term-grid label:first-child {*/
-/*    text-align: left;*/
-/*}*/
-
-
+.up_votes_img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    cursor: pointer;
+}
 
 .grid-header {
     border-bottom: unset;

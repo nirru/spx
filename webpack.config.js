@@ -1,5 +1,6 @@
 const dev = process.env.NODE_ENV !== "production";
 const path = require( "path" );
+const CopyPlugin  = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require( "webpack-bundle-analyzer" );
 const FriendlyErrorsWebpackPlugin = require( "friendly-errors-webpack-plugin" );
 const MiniCssExtractPlugin = require( "mini-css-extract-plugin" );
@@ -9,6 +10,11 @@ const plugins = [
     new MiniCssExtractPlugin( {
         filename: "styles.css",
     } ),
+    new CopyPlugin({
+        patterns: [
+            { from: 'assets', to: 'assets' },
+        ],
+    }),
 ];
 
 if ( !dev ) {
@@ -38,7 +44,8 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: "babel-loader",
-            }, {
+            },
+            {
                 test: /\.css$/,
                 use: [
                     {
@@ -47,6 +54,30 @@ module.exports = {
                     "css-loader",
                 ],
             },
+            {
+                test: /\.(png|svg|jpg|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
+            {
+                test: /\.(png|jpe?g)/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            name: './img/[name].[ext]',
+                            limit: 10000
+                        }
+                    },
+                    {
+                        loader: 'img-loader'
+                    }
+                ]
+            },
+
         ],
     },
     output: {
@@ -54,4 +85,7 @@ module.exports = {
         filename: "[name].bundle.js",
     },
     plugins,
+    devServer: {
+        contentBase: './dist',
+    },
 };

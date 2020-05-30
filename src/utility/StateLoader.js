@@ -1,14 +1,13 @@
-const STORAGE = "SPX_STORAGE"
+const STORAGE = "SPX"
 export default class StateLoader {
 
-    loadState() {
+    loadState(initialState) {
         try {
             if (typeof window !== "undefined") {
                 let serializedState = localStorage.getItem(STORAGE);
                 if (serializedState === null) {
-                    return this.initializeState();
+                    return this.initializeState(initialState);
                 }
-
                 return JSON.parse(serializedState);
             }
         }
@@ -21,7 +20,6 @@ export default class StateLoader {
         try {
             if (typeof window !== "undefined"){
                 let serializedState = JSON.stringify(state);
-
                 localStorage.setItem(STORAGE, serializedState);
             }
 
@@ -31,10 +29,8 @@ export default class StateLoader {
         }
     }
 
-    initializeState() {
-        return {
-            //state object
-        }
+    initializeState(initialState) {
+        return initialState;
     };
 
 }
