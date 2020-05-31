@@ -9,7 +9,10 @@ Install dependencies with
 ```yarn intsall```
 
 Run dev mode with
-```yarn dev```
+```yarn start```
+
+Run test  with
+```yarn test```
 
 Now open the browser and navigate to `http://localhost:8080` and you get your server rendered React app. You can inspect the page source and see that the html coming from your local server has all the nodes defined in the React app.
 
