@@ -14,7 +14,7 @@ import {initializeSession} from "./store/actions/feedAction";
 
 
 const app = express();
-
+const PORT = process.env.PORT || 8080;
 app.use( express.static( path.resolve( __dirname, "../dist" ) ) );
 app.get( "/*", ( req, res ) => {
     const context = { };
@@ -46,7 +46,9 @@ app.get( "/*", ( req, res ) => {
     } );
 } );
 
-app.listen( 2048 );
+app.listen(PORT,function listenHandler() {
+    console.log(`Server running on Port ${PORT}...`);
+});
 
 function htmlTemplate( reactDom, reduxState, helmetData ) {
     return `

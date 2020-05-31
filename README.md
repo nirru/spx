@@ -3,7 +3,7 @@ A baseline for server side rendering for XT Coding Assignment.
 
 ## Getting started
 Clone the repo with
-```git clone https://nir123@bitbucket.org/nir123/spx.git```
+```https://github.com/nirru/spx```
 
 Install dependencies with
 ```yarn intsall```
@@ -11,7 +11,7 @@ Install dependencies with
 Run dev mode with
 ```yarn dev```
 
-Now open the browser and navigate to `http://localhost:2048` and you get your server rendered React app. You can inspect the page source and see that the html coming from your local server has all the nodes defined in the React app.
+Now open the browser and navigate to `http://localhost:8080` and you get your server rendered React app. You can inspect the page source and see that the html coming from your local server has all the nodes defined in the React app.
 
 ### A few notes
 * I tried to complete all the feature whatever provided in the assignment 
