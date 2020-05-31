@@ -23,7 +23,7 @@ export const FeedList = ({hits,getHostName,elapsedTime,hide,upVote}) => {
                             <strong className="author">{item.author !== null ? item.author : "N/A"}</strong>
                             &nbsp; {item.created_at && elapsedTime(item.created_at)}
                             &nbsp;
-                            <span onClick={()=>hide(item.objectID)}>hide</span>
+                            <span className="hide-span" onClick={()=>hide(item.objectID)}>hide</span>
                                 </span>
                     </label>
                 </div>

@@ -102,6 +102,9 @@
     cursor: pointer;
     vertical-align: middle;
 }
+.hide-span{
+    cursor: pointer;
+}
 
 .grid-header {
     border-bottom: unset;
