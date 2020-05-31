@@ -1,10 +1,10 @@
 import React from "react";
-import {Footer} from "../footer";
 import {connect} from "react-redux";
 import {dispatchVoteAction, fetchData, fetchHideData} from "../../service/feedService";
 import {dispatchNextPage, dispatchPrevPage} from "../../service/pageService";
 import {FeedList} from "./FeedList";
 import {elapsedTime, getHostName} from "./Utility";
+import {FeedGraph} from "../footer/FeedGraph";
 
 class Home extends React.Component{
     componentDidMount( ) {
@@ -33,7 +33,7 @@ class Home extends React.Component{
                         <label className="news_details">News Details</label>
                     </div>
                     <FeedList hits={feeds.hits}
-                              getHostName={getHostName}
+                              getHostName = {getHostName}
                               elapsedTime = {elapsedTime}
                               hide        = {this.props.fetchHideData}
                               upVote      = {this.props.dispatchVoteAction}
@@ -46,7 +46,7 @@ class Home extends React.Component{
                         <button className="next" onClick={()=>this.goToNextFeeds(feeds.page)}>Next</button>
                     </div>
                 </main>
-                <footer><Footer></Footer></footer>
+                <FeedGraph feeds={feeds.hits}/>
             </div>
         )
     }

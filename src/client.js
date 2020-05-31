@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import {createStore1} from "./store/store";
 import "./App.css";
 
+
 const {store} = createStore1( window.REDUX_DATA );
 
 const jsx = (
