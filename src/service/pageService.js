@@ -1,11 +1,21 @@
 import {nextPage, prevPage} from "../store/actions/pageAction";
-import {fetchCircuits} from "./api";
+import {fetchFeeds} from "./api";
 
+/**
+ *
+ * @param page
+ * @returns {function(*): Promise<unknown>}
+ */
 export const dispatchNextPage = ( page) => ( dispatch ) => {
-    return fetchCircuits(page ).then( res => dispatch( nextPage( res ) ) ) ;
+    return fetchFeeds(page ).then( res => dispatch( nextPage( res ) ) ) ;
 }
 
+/**
+ *
+ * @param page
+ * @returns {function(*): Promise<unknown>}
+ */
 export const dispatchPrevPage = ( page) => ( dispatch ) => {
-    return fetchCircuits(page ).then( res => dispatch( prevPage( res ) ) ) ;
+    return fetchFeeds(page ).then( res => dispatch( prevPage( res ) ) ) ;
 }
 

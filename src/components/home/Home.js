@@ -12,6 +12,7 @@ class Home extends React.Component{
             // this.props.fetchData( );
         }
     }
+
     goToNextFeeds = (page)=>{
         this.props.dispatchNextPage(page + 1);
     }
@@ -41,9 +42,9 @@ class Home extends React.Component{
                     />
 
                     <div className="btn-next-prev">
-                        <button className="next" onClick={()=>this.goToPrevFeeds(feeds.page)}>Previous</button>
+                        <button  className="next" onClick={()=>this.goToPrevFeeds(feeds.page)}>Previous</button>
 
-                        <button className="next" onClick={()=>this.goToNextFeeds(feeds.page)}>Next</button>
+                        <button  className="next" onClick={()=>this.goToNextFeeds(feeds.page)}>Next</button>
                     </div>
                 </main>
                 <FeedGraph feeds={feeds.hits}/>

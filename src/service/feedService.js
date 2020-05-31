@@ -1,11 +1,11 @@
-import {fetchCircuits} from "./api";
+import {fetchFeeds} from "./api";
 import {hideNews, increaseVoteCount, storeData} from "../store/actions/feedAction";
 
 /**
  * service to get the feeds
  */
 export const fetchData = ( ) => ( dispatch ) => {
-    return fetchCircuits( ).then( res => dispatch( storeData( res ) ) );
+    return fetchFeeds( ).then( res => dispatch( storeData( res ) ) );
 }
 /**
  * @param {number} id

@@ -1,6 +1,7 @@
 const dev = process.env.NODE_ENV !== "production";
 const path = require( "path" );
 const CopyPlugin  = require('copy-webpack-plugin');
+const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require( "webpack-bundle-analyzer" );
 const FriendlyErrorsWebpackPlugin = require( "friendly-errors-webpack-plugin" );
 const MiniCssExtractPlugin = require( "mini-css-extract-plugin" );
